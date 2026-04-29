@@ -6,7 +6,7 @@
 
   <meta 
     name="description" 
-    content="Bar Restaurant Sopi - Shërbim premium në Kukës me ushqim tradicional, atmosferë elegante dhe mikpritje familjare." 
+    content="Bar Restaurant Sopi - Restorant tradicional në Kukës me ushqim cilësor, atmosferë familjare dhe shërbim premium." 
   />
 
   <title>Bar Restaurant Sopi</title>
@@ -21,6 +21,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link 
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
     rel="stylesheet" 
@@ -52,13 +53,14 @@
   <style>
     :root {
       --bg: #050505;
-      --surface: rgba(10, 10, 10, 0.94);
-      --surface-strong: rgba(8, 8, 8, 0.98);
+      --surface: rgba(12, 12, 12, 0.96);
+      --surface-soft: rgba(255, 255, 255, 0.035);
       --accent: #d4af37;
-      --accent-soft: #f0d875;
-      --text: #f5f0e6;
-      --muted: #bcb8ae;
+      --accent-soft: #f1d675;
+      --text: #f7f0e4;
+      --muted: #bdb7aa;
       --border: rgba(212, 175, 55, 0.18);
+      --white-border: rgba(255, 255, 255, 0.08);
       --radius: 24px;
     }
 
@@ -94,14 +96,14 @@
       display: block;
     }
 
-    /* HEADER / HERO */
+    /* HEADER */
 
     header {
       min-height: 100vh;
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.84)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.86)),
         url('front.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -112,7 +114,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.16), transparent 34%);
+      background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), transparent 36%);
       pointer-events: none;
     }
 
@@ -120,7 +122,7 @@
       content: '';
       position: absolute;
       inset: auto 0 0 0;
-      height: 180px;
+      height: 200px;
       background: linear-gradient(180deg, transparent, var(--bg));
       pointer-events: none;
     }
@@ -137,8 +139,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.1rem 5%;
-      background: rgba(8, 8, 8, 0.58);
-      backdrop-filter: blur(12px);
+      background: rgba(8, 8, 8, 0.62);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -194,8 +196,8 @@
 
     .nav-links {
       display: flex;
-      gap: 1.8rem;
       align-items: center;
+      gap: 1.8rem;
       font-size: 0.95rem;
       font-weight: 600;
     }
@@ -210,7 +212,7 @@
       transform: translateY(-1px);
     }
 
-    /* HERO CONTENT */
+    /* HERO */
 
     .hero {
       flex: 1;
@@ -223,39 +225,39 @@
     }
 
     .hero-content {
-      max-width: 780px;
+      max-width: 820px;
       width: 100%;
-      background: rgba(5, 5, 5, 0.82);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 3rem 2.5rem;
-      border-radius: var(--radius);
-      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.42);
       text-align: center;
-      backdrop-filter: blur(10px);
+      padding: 3rem 2.5rem;
+      background: rgba(5, 5, 5, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.46);
+      backdrop-filter: blur(12px);
     }
 
     .hero-kicker {
       display: inline-block;
       color: var(--accent-soft);
       font-size: 0.78rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.22rem;
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 5vw, 4.5rem);
-      line-height: 1.05;
       color: var(--accent);
-      margin-bottom: 1rem;
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
+      line-height: 1.05;
       letter-spacing: 0.08rem;
       text-transform: uppercase;
+      margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
       color: #e8e3d9;
+      font-size: 1.1rem;
       max-width: 720px;
       margin: 0 auto 2rem;
     }
@@ -263,24 +265,22 @@
     .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      min-height: 48px;
       padding: 0.95rem 2.1rem;
+      border-radius: 999px;
       background: var(--accent);
       color: #080808;
-      border-radius: 999px;
       font-weight: 800;
-      letter-spacing: 0.02rem;
-      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
       border: 1px solid transparent;
-      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
     }
 
     .btn:hover {
@@ -291,7 +291,7 @@
     .btn-outline {
       background: transparent;
       color: var(--text);
-      border-color: rgba(212, 175, 55, 0.45);
+      border-color: rgba(212, 175, 55, 0.48);
     }
 
     .btn-outline:hover {
@@ -314,29 +314,36 @@
     .section-title {
       text-align: center;
       color: var(--accent);
-      font-size: clamp(2rem, 2.4vw, 3.2rem);
+      font-size: clamp(2rem, 2.5vw, 3.2rem);
       margin-bottom: 2.5rem;
       text-transform: uppercase;
       letter-spacing: 0.18rem;
     }
 
-    /* ABOUT */
-
-    .about {
-      background: linear-gradient(180deg, rgba(15, 15, 15, 0.96), rgba(8, 8, 8, 0.96));
+    .section-subtitle {
+      max-width: 720px;
+      margin: -1.4rem auto 2.8rem;
       text-align: center;
-      padding: 3.5rem 2rem;
-      border-radius: var(--radius);
-      border: 1px solid rgba(212, 175, 55, 0.12);
-      max-width: 1100px;
-      margin: 0 auto;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.2);
+      color: var(--muted);
+      font-size: 1rem;
     }
 
-    .about p {
+    /* ABOUT */
+
+    .about-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(15, 15, 15, 0.96), rgba(8, 8, 8, 0.96));
+      border-radius: var(--radius);
+      border: 1px solid rgba(212, 175, 55, 0.12);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .about-card p {
       max-width: 820px;
       margin: 0 auto;
-      font-size: 1rem;
       color: #d7d2c8;
       line-height: 1.9;
     }
@@ -351,8 +358,8 @@
     .feature {
       padding: 1.2rem;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: var(--surface-soft);
+      border: 1px solid var(--white-border);
     }
 
     .feature strong {
@@ -368,55 +375,93 @@
 
     /* MENU */
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.6rem;
+    .menu-section {
+      background:
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 32%),
+        linear-gradient(180deg, #050505, #0b0b0b);
     }
 
-    .menu-card {
+    .menu-wrapper {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .menu-category {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 2rem;
-      border-radius: 24px;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
-      overflow: hidden;
+      border-radius: var(--radius);
+      padding: 1.7rem;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.24);
     }
 
-    .menu-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 18px;
-      margin-bottom: 1.4rem;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: #111;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
-    }
-
-    .menu-card h3 {
+    .menu-category h3 {
       color: var(--accent);
-      font-size: 1.4rem;
-      margin-bottom: 0.85rem;
+      font-size: 1.35rem;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.10rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
 
-    .menu-card p {
-      color: #d1cdc3;
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
+    .menu-category h3::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.45), transparent);
     }
 
-    .price {
-      display: inline-block;
+    .menu-list {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      padding-bottom: 0.95rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.10);
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .menu-item-name {
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .menu-item-en {
+      display: block;
+      margin-top: 0.18rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .menu-price {
       color: var(--accent-soft);
       font-weight: 800;
-      font-size: 1.1rem;
+      white-space: nowrap;
+      font-size: 0.98rem;
+    }
+
+    .menu-note {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     /* CONTACT */
@@ -432,12 +477,11 @@
       background: rgba(8, 8, 8, 0.95);
       border-radius: 28px;
       border: 1px solid rgba(212, 175, 55, 0.16);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
     }
 
     .contact-box p {
       margin: 1rem 0;
-      font-size: 1rem;
       color: #d8d3c9;
       line-height: 1.8;
     }
@@ -448,7 +492,6 @@
 
     address a {
       color: var(--accent);
-      text-decoration: none;
       transition: color 0.25s ease;
     }
 
@@ -472,8 +515,6 @@
       flex-wrap: wrap;
     }
 
-    /* FOOTER */
-
     footer {
       text-align: center;
       padding: 1.25rem 5%;
@@ -484,6 +525,12 @@
     }
 
     /* TABLET */
+
+    @media (max-width: 980px) {
+      .menu-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
 
     @media (max-width: 900px) {
       nav {
@@ -551,21 +598,17 @@
     /* SMALL TABLET */
 
     @media (max-width: 680px) {
-      .hero-content {
-        padding: 2rem;
-      }
-
       section {
         padding: 4.5rem 4%;
+      }
+
+      .hero-content {
+        padding: 2rem;
       }
 
       .section-title {
         font-size: 2rem;
         letter-spacing: 0.12rem;
-      }
-
-      .contact-box {
-        padding: 1.8rem;
       }
 
       .hero-actions,
@@ -575,6 +618,10 @@
 
       .btn {
         width: 100%;
+      }
+
+      .contact-box {
+        padding: 1.8rem;
       }
     }
 
@@ -601,9 +648,7 @@
         width: 100%;
         height: calc(100vh - 61px);
         position: fixed;
-        flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
         padding: 2rem 1.2rem;
         background: rgba(8, 8, 8, 0.98);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.35);
@@ -614,13 +659,11 @@
         text-align: center;
         font-size: 1.05rem;
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
 
       .hero {
         min-height: 100vh;
         padding: 5.5rem 1rem 2rem;
-        align-items: center;
       }
 
       .hero-content {
@@ -630,11 +673,11 @@
 
       .hero-kicker {
         font-size: 0.7rem;
-        letter-spacing: 0.16rem;
+        letter-spacing: 0.15rem;
       }
 
       .hero h1 {
-        font-size: 2.25rem;
+        font-size: 2.22rem;
         line-height: 1.08;
         letter-spacing: 0.04rem;
       }
@@ -644,51 +687,54 @@
         margin-bottom: 1.5rem;
       }
 
-      .btn {
-        width: 100%;
-        padding: 0.9rem 1.2rem;
-      }
-
       section {
         padding: 3.5rem 1rem;
       }
 
-      .about {
+      .about-card {
         padding: 2rem 1.2rem;
         border-radius: 18px;
       }
 
-      .about p {
+      .about-card p {
         font-size: 0.95rem;
-        line-height: 1.8;
       }
 
       .section-title {
         font-size: 1.65rem;
         letter-spacing: 0.08rem;
-        margin-bottom: 1.6rem;
+        margin-bottom: 1.5rem;
       }
 
-      .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
+      .section-subtitle {
+        font-size: 0.92rem;
+        margin-bottom: 2rem;
       }
 
-      .menu-card {
+      .menu-category {
         padding: 1.2rem;
         border-radius: 18px;
       }
 
-      .menu-card img {
-        height: 170px;
-        border-radius: 14px;
+      .menu-category h3 {
+        font-size: 1.05rem;
+        letter-spacing: 0.08rem;
       }
 
-      .menu-card h3 {
-        font-size: 1.2rem;
+      .menu-item {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
       }
 
-      .menu-card p {
+      .menu-item-name {
+        font-size: 0.98rem;
+      }
+
+      .menu-item-en {
+        font-size: 0.82rem;
+      }
+
+      .menu-price {
         font-size: 0.95rem;
       }
 
@@ -711,8 +757,6 @@
       }
     }
 
-    /* VERY SMALL PHONES */
-
     @media (max-width: 360px) {
       .hero h1 {
         font-size: 1.95rem;
@@ -720,10 +764,6 @@
 
       .hero p {
         font-size: 0.92rem;
-      }
-
-      .menu-card img {
-        height: 150px;
       }
     }
   </style>
@@ -750,15 +790,17 @@
 
     <div class="hero">
       <div class="hero-content">
-        <span class="hero-kicker">Kukës • Traditional Taste • Premium Atmosphere</span>
+        <span class="hero-kicker">Kukës • Traditional Food • Premium Service</span>
+
         <h1>Bar Restaurant Sopi</h1>
+
         <p>
-          Traditional taste, premium atmosphere, and warm family hospitality.
-          Enjoy fresh food, relaxing drinks, and elegant service in the heart of Kukës.
+          Traditional Albanian taste, warm family atmosphere, and elegant service
+          in the heart of Kukës.
         </p>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn">Reserve a Table</a>
+          <a href="#menu" class="btn">View Menu</a>
           <a href="tel:+35569566824" class="btn btn-outline">Call Now</a>
         </div>
       </div>
@@ -768,7 +810,7 @@
   <main>
 
     <section id="about">
-      <div class="about">
+      <div class="about-card">
         <h2 class="section-title">About Us</h2>
 
         <p>
@@ -785,7 +827,7 @@
 
           <div class="feature">
             <strong>Family Atmosphere</strong>
-            <span>Ambient i ngrohtë, i përshtatshëm për familje dhe shoqëri.</span>
+            <span>Ambient i ngrohtë për familje, miq dhe momente të veçanta.</span>
           </div>
 
           <div class="feature">
@@ -796,65 +838,267 @@
       </div>
     </section>
 
-    <section id="menu">
-      <h2 class="section-title">Menu Highlights</h2>
+    <section class="menu-section" id="menu">
+      <h2 class="section-title">Our Menu</h2>
+      <p class="section-subtitle">
+        Menu tradicionale shqiptare me përkthim në anglisht për klientët vendas dhe të huaj.
+      </p>
 
-      <div class="menu-grid">
+      <div class="menu-wrapper">
 
-        <article class="menu-card">
-          <img 
-            src="images/dish.jpg" 
-            alt="Kombinim Mishi - mixed grilled meats including beef steak, chicken fillet, and meatballs" 
-            loading="lazy" 
-          />
-          <h3>Kombinim Mishi</h3>
-          <p>
-            Kombinim misherash i përbërë nga mish i zier, biftek, fileto pule,
-            qofte dhe shoqëruese.
-          </p>
-          <div class="price">From €12</div>
-        </article>
+        <div class="menu-category">
+          <h3>Supërat</h3>
 
-        <article class="menu-card">
-          <img 
-            src="images/pizza-margarita.jpg" 
-            alt="Pizza Margarita - classic Italian pizza with fresh tomatoes, mozzarella, and basil" 
-            loading="lazy" 
-          />
-          <h3>Pizza Margarita</h3>
-          <p>
-            Pizza klasike me përbërës të freskët, ideale për një drekë apo darkë të lehtë.
-          </p>
-          <div class="price">€8</div>
-        </article>
+          <div class="menu-list">
 
-        <article class="menu-card">
-          <img 
-            src="images/fresh-salad.jpg" 
-            alt="Fresh seasonal salad with crisp vegetables and light vinaigrette" 
-            loading="lazy" 
-          />
-          <h3>Fresh Salad</h3>
-          <p>
-            Sallatë e freskët sezonale, opsion i lehtë dhe i shëndetshëm për çdo moment.
-          </p>
-          <div class="price">€5</div>
-        </article>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Supë Pule</div>
+                <span class="menu-item-en">Chicken Soup</span>
+              </div>
+              <div class="menu-price">250 lekë</div>
+            </div>
 
-        <article class="menu-card">
-          <img 
-            src="images/coffee-drinks.jpg" 
-            alt="Premium coffee and beverage selection" 
-            loading="lazy" 
-          />
-          <h3>Coffee & Drinks</h3>
-          <p>
-            Kafe, pije të freskëta dhe zgjedhje premium për t’u relaksuar gjatë ditës.
-          </p>
-          <div class="price">€2</div>
-        </article>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Tasqebab</div>
+                <span class="menu-item-en">Traditional Beef Stew</span>
+              </div>
+              <div class="menu-price">350 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Paçe Koke</div>
+                <span class="menu-item-en">Traditional Head Soup</span>
+              </div>
+              <div class="menu-price">250 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Supë Patate</div>
+                <span class="menu-item-en">Potato Soup - without meat / with meat</span>
+              </div>
+              <div class="menu-price">200 / 350 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Supë Perime</div>
+                <span class="menu-item-en">Vegetable Soup - without meat / with meat</span>
+              </div>
+              <div class="menu-price">200 / 350 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Fasule</div>
+                <span class="menu-item-en">Beans - without meat / with meat</span>
+              </div>
+              <div class="menu-price">200 / 350 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Qofte me Lëng</div>
+                <span class="menu-item-en">Meatballs in Broth</span>
+              </div>
+              <div class="menu-price">250 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Mish me Lëng</div>
+                <span class="menu-item-en">Meat in Broth</span>
+              </div>
+              <div class="menu-price">300 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Tavë Dheu</div>
+                <span class="menu-item-en">Traditional Clay Pot Dish</span>
+              </div>
+              <div class="menu-price">350 lekë</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Mishërat</h3>
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Qofte</div>
+                <span class="menu-item-en">Meatball</span>
+              </div>
+              <div class="menu-price">60 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Mish i Zier</div>
+                <span class="menu-item-en">Boiled Meat</span>
+              </div>
+              <div class="menu-price">250 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Biftek</div>
+                <span class="menu-item-en">Beef Steak</span>
+              </div>
+              <div class="menu-price">600 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Biftek me Patate të Skuqura</div>
+                <span class="menu-item-en">Beef Steak with French Fries</span>
+              </div>
+              <div class="menu-price">700 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Fileto Pule Zgare</div>
+                <span class="menu-item-en">Grilled Chicken Fillet</span>
+              </div>
+              <div class="menu-price">500 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Fileto Pule me Patate të Skuqura</div>
+                <span class="menu-item-en">Chicken Fillet with French Fries</span>
+              </div>
+              <div class="menu-price">600 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Garniturë</div>
+                <span class="menu-item-en">Mixed Side Dish</span>
+              </div>
+              <div class="menu-price">800 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Shishqebab i Hapur</div>
+                <span class="menu-item-en">Open Shish Kebab</span>
+              </div>
+              <div class="menu-price">2500 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Brinjë Viçi</div>
+                <span class="menu-item-en">Beef Ribs</span>
+              </div>
+              <div class="menu-price">2500 lekë</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Gatime të Tjera</h3>
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Pilaf</div>
+                <span class="menu-item-en">Rice Pilaf</span>
+              </div>
+              <div class="menu-price">100 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Makarona</div>
+                <span class="menu-item-en">Pasta</span>
+              </div>
+              <div class="menu-price">100 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Makarona me Salcë</div>
+                <span class="menu-item-en">Pasta with Sauce</span>
+              </div>
+              <div class="menu-price">200 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Kos</div>
+                <span class="menu-item-en">Yogurt</span>
+              </div>
+              <div class="menu-price">100 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Vezë Omletë</div>
+                <span class="menu-item-en">Omelette</span>
+              </div>
+              <div class="menu-price">100 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Djathë i Bardhë</div>
+                <span class="menu-item-en">White Cheese</span>
+              </div>
+              <div class="menu-price">100 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Djathë Kaçkavall</div>
+                <span class="menu-item-en">Kashkaval Cheese</span>
+              </div>
+              <div class="menu-price">150 lekë</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Sallatera</h3>
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Sallatë Greke e Vogël / e Madhe</div>
+                <span class="menu-item-en">Greek Salad - small / large</span>
+              </div>
+              <div class="menu-price">200 / 300 lekë</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Sallatë Turshi e Vogël / e Madhe</div>
+                <span class="menu-item-en">Pickled Salad - small / large</span>
+              </div>
+              <div class="menu-price">200 / 300 lekë</div>
+            </div>
+
+          </div>
+        </div>
 
       </div>
+
+      <p class="menu-note">
+        Prices are shown in Albanian Lek. For reservations or questions about the menu, please call us directly.
+      </p>
     </section>
 
     <section class="contact" id="contact">
@@ -878,6 +1122,7 @@
 
         <div class="contact-actions">
           <a href="tel:+35569566824" class="btn">Call Now</a>
+
           <a 
             href="https://www.google.com/maps/search/?api=1&query=Bar%20Restaurant%20Sopi%20Kukes" 
             target="_blank" 
