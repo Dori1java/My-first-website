@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bar Restaurant Sopi - Shërbim premium në Kukes me ushqim tradicional dhe atmosferë elegante. Rezervo tryezën tënde sot." />
   <title>Bar Restaurant Sopi</title>
 
   <meta name="theme-color" content="#090909" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23d4af37'>S</text></svg>" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Restaurant",
+    "name": "Bar Restaurant Sopi",
+    "image": "front.jpg",
+    "description": "Bar Restaurant Sopi - Traditional Albanian cuisine with premium atmosphere",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rruga Islam Spahiu",
+      "addressLocality": "Kukes",
+      "addressCountry": "AL"
+    },
+    "telephone": "+355 69 5668241",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "06:00",
+      "closes": "22:00"
+    }
+  }
+  </script>
 
   <style>
     :root {
@@ -210,6 +235,11 @@
       transform: translateY(-2px);
     }
 
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
     section {
       padding: 6rem 5%;
     }
@@ -306,6 +336,20 @@
       font-size: 1rem;
       color: #d8d3c9;
       line-height: 1.8;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    address a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    address a:hover {
+      color: var(--accent-soft);
     }
 
     iframe {
@@ -444,71 +488,76 @@
 
     <div class="hero">
       <div class="hero-content">
-        <h1>Bar Restaurant Sopi </h1>
+        <h1>Bar Restaurant Sopi</h1>
         <p>Traditional taste, premium atmosphere, and warm family hospitality.</p>
         <a href="#contact" class="btn">Reserve a Table</a>
       </div>
     </div>
   </header>
 
-  <section class="about" id="about">
-    <h2 class="section-title">About Us</h2>
-    <p>
-      Mirë se vini në Bar Restaurant Sopi, një vend i ngrohtë dhe elegant ku ushqimi i mirë, momentet familjare dhe shërbimi premium bashkohen..
-    </p>
-  </section>
+  <main>
+    <section class="about" id="about">
+      <h2 class="section-title">About Us</h2>
+      <p>
+        Mirë se vini në Bar Restaurant Sopi, një vend i ngrohtë dhe elegant ku ushqimi i mirë, momentet familjare dhe shërbimi premium bashkohen.
+      </p>
+    </section>
 
-  <section id="menu">
-    <h2 class="section-title">Menu Highlights</h2>
-    <!-- Add your own food photos to the images/ folder and update the filenames below -->
-    <div class="menu-grid">
-      <div class="menu-card">
-        <img src="images/dish.jpg" alt="Featured dish" />
-        <h3>Kombinim Mishi</h3>
-        <p>Komibnim Misherash i perbere nga mish i zier biftek fileto pule qofte dhe shoqeruese.</p>
-        <div class="price">From €12</div>
+    <section id="menu">
+      <h2 class="section-title">Menu Highlights</h2>
+      <!-- Add your own food photos to the images/ folder and update the filenames below -->
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="images/dish.jpg" alt="Kombinim Mishi - mixed grilled meats including beef steak, chicken fillet, and meatballs" loading="lazy" />
+          <h3>Kombinim Mishi</h3>
+          <p>Kombinim misherash i përbërë nga mish i zier, biftek, fileto pule, qofte dhe shoqeruese.</p>
+          <div class="price">From €12</div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/pizza-margarita.jpg" alt="Pizza Margarita - classic Italian pizza with fresh tomatoes, mozzarella, and basil" loading="lazy" />
+          <h3>Pizza Margarita</h3>
+          <p>Classic Italian pizza with fresh ingredients.</p>
+          <div class="price">€8</div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/fresh-salad.jpg" alt="Fresh seasonal salad with crisp vegetables and light vinaigrette" loading="lazy" />
+          <h3>Fresh Salad</h3>
+          <p>Light and healthy option.</p>
+          <div class="price">€5</div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/coffee-drinks.jpg" alt="Premium coffee and beverage selection" loading="lazy" />
+          <h3>Coffee & Drinks</h3>
+          <p>Relax and enjoy premium drinks.</p>
+          <div class="price">€2</div>
+        </article>
       </div>
+    </section>
 
-      <div class="menu-card">
-        <img src="images/pizza-margarita.jpg" alt="Pizza margarita" />
-        <h3>Pizza Margarita</h3>
-        <p>Classic Italian pizza with fresh ingredients.</p>
-        <div class="price">€8</div>
+    <section class="contact" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-box">
+        <address>
+          <p><strong>Address:</strong> Rruga Islam Spahiu, Kukes, Albania</p>
+          <p><strong>Phone:</strong> <a href="tel:+35569566824">+355 69 5668241</a></p>
+          <p><strong>Opening Hours:</strong> 06:00 - 22:00</p>
+        </address>
+        <iframe 
+          title="Bar Restaurant Sopi Location on Google Maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2679.991761276411!2d20.422964375570803!3d42.07560775302585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1353d21d8fc14a93%3A0x98c7f4f58b3a8f8c!2sBar%20Restaurant%20Sopi!5e0!3m2!1sen!2s!4v1234567890"
+          width="100%" 
+          height="300" 
+          style="border:0; margin-top:20px; border-radius:10px;">
+        </iframe>
+
+        <br />
+        <a href="tel:+35569566824" class="btn">Call Now</a>
       </div>
-
-      <div class="menu-card">
-        <img src="images/fresh-salad.jpg" alt="Fresh salad" />
-        <h3>Fresh Salad</h3>
-        <p>Light and healthy option.</p>
-        <div class="price">€5</div>
-      </div>
-
-      <div class="menu-card">
-        <img src="images/coffee-drinks.jpg" alt="Coffee and drinks" />
-        <h3>Coffee & Drinks</h3>
-        <p>Relax and enjoy premium drinks.</p>
-        <div class="price">€2</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-box">
-      <p><strong>Address:</strong> Kukes,Rruga Islam Spahiu</p>
-      <p><strong>Phone:</strong> +355 69 5668241</p>
-      <p><strong>Opening Hours:</strong> 06:00 - 22:00</p>
-      <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2679.991761276411!2d20.422964375570803!3d42.07560775302585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1353d21d8fc14a93%3A0x98cd33af16e49b16!2sRestaurant%20%22Sopi%22!5e1!3m2!1sen!2s!4v1777370594661!5m2!1sen!2s"
-      width="100%" 
-      height="300" 
-      style="border:0; margin-top:20px; border-radius:10px;">
-    </iframe>
-
-      <br />
-      <a href="tel:+355000000000" class="btn">Call Now</a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     © 2026 Bar Restaurant Sopi Premium
