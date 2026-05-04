@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link 
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" 
     rel="stylesheet" 
   />
 
@@ -40,7 +40,7 @@
       "addressLocality": "Kukes",
       "addressCountry": "AL"
     },
-    "telephone": "+355 69 2041256",
+    "telephone": "+355 69 5668241",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -72,7 +72,7 @@
     }
 
     html {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: 'Lato', system-ui, sans-serif;
       font-size: 16px;
       background: var(--bg);
       color: var(--text);
@@ -103,7 +103,7 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.86)), 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.86)),
         url('front.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -248,6 +248,7 @@
 
     .hero h1 {
       color: var(--accent);
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.6rem, 5vw, 4.6rem);
       line-height: 1.05;
       letter-spacing: 0.08rem;
@@ -314,6 +315,7 @@
     .section-title {
       text-align: center;
       color: var(--accent);
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 2.5vw, 3.2rem);
       margin-bottom: 2.5rem;
       text-transform: uppercase;
@@ -766,6 +768,179 @@
         font-size: 0.92rem;
       }
     }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== ORNAMENTAL DIVIDER ===== */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 0 0;
+      opacity: 0.55;
+    }
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 220px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    .ornament-divider span {
+      color: var(--accent);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    /* ===== HERO FLOATING PARTICLES ===== */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .hero-particles span {
+      position: absolute;
+      display: block;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0;
+      animation: floatUp var(--dur, 6s) var(--delay, 0s) ease-in infinite;
+    }
+    @keyframes floatUp {
+      0%   { opacity: 0; transform: translateY(0) scale(1); }
+      10%  { opacity: 0.6; }
+      80%  { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(-340px) scale(0.5); }
+    }
+
+    /* ===== FEATURE CARD ENHANCEMENTS ===== */
+    .feature {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: default;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(212,175,55,0.12);
+      border-color: rgba(212,175,55,0.35);
+    }
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    /* ===== MENU CATEGORY ICON ===== */
+    .menu-cat-icon {
+      font-size: 1.1rem;
+      margin-right: 0.15rem;
+    }
+
+    /* ===== MENU ITEM HOVER ===== */
+    .menu-item {
+      transition: background 0.2s ease;
+      border-radius: 8px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    .menu-item:hover {
+      background: rgba(212,175,55,0.05);
+    }
+
+    /* ===== ACTIVE NAV LINK ===== */
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    /* ===== HERO SCROLL INDICATOR ===== */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.55;
+      animation: fadeHint 3s 2s ease both;
+    }
+    @keyframes fadeHint {
+      0%  { opacity: 0; transform: translateX(-50%) translateY(8px); }
+      30% { opacity: 0.55; transform: translateX(-50%) translateY(0); }
+      80% { opacity: 0.55; }
+      100%{ opacity: 0; }
+    }
+    .scroll-hint span {
+      font-size: 0.7rem;
+      letter-spacing: 0.15rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      transform: rotate(45deg);
+      animation: bounceDown 1.4s ease infinite;
+    }
+    @keyframes bounceDown {
+      0%,100% { transform: rotate(45deg) translateY(0); }
+      50%      { transform: rotate(45deg) translateY(5px); }
+    }
+
+    /* ===== HERO KICKER GLOW ===== */
+    .hero-kicker {
+      animation: subtleGlow 3s ease-in-out infinite alternate;
+    }
+    @keyframes subtleGlow {
+      from { text-shadow: 0 0 8px rgba(212,175,55,0); }
+      to   { text-shadow: 0 0 18px rgba(212,175,55,0.45); }
+    }
+
+    /* ===== FOOTER UPGRADE ===== */
+    footer {
+      text-align: center;
+      padding: 2rem 5%;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: #9a9a9a;
+      background: #070707;
+      font-size: 0.92rem;
+    }
+    .footer-tagline {
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      opacity: 0.8;
+    }
+
+    /* ===== ABOUT H2 FIX - use Playfair inside card ===== */
+    .about-card .section-title {
+      font-family: 'Playfair Display', serif;
+    }
+
   </style>
 </head>
 
@@ -789,6 +964,7 @@
     </nav>
 
     <div class="hero">
+      <div class="hero-particles" id="heroParticles"></div>
       <div class="hero-content">
         <span class="hero-kicker">Kukës • Traditional Food • Premium Service</span>
 
@@ -801,8 +977,13 @@
 
         <div class="hero-actions">
           <a href="#menu" class="btn">View Menu</a>
-          <a href="tel:+355692041256" class="btn btn-outline">Call Now</a>
+          <a href="tel:+35569566824" class="btn btn-outline">Call Now</a>
         </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
       </div>
     </div>
   </header>
@@ -810,7 +991,7 @@
   <main>
 
     <section id="about">
-      <div class="about-card">
+      <div class="about-card reveal">
         <h2 class="section-title">About Us</h2>
 
         <p>
@@ -820,34 +1001,39 @@
         </p>
 
         <div class="about-features">
-          <div class="feature">
+          <div class="feature reveal reveal-delay-1">
+            <span class="feature-icon">🌿</span>
             <strong>Fresh Food</strong>
             <span>Ushqim i përgatitur me kujdes dhe përbërës cilësorë.</span>
           </div>
 
-          <div class="feature">
+          <div class="feature reveal reveal-delay-2">
+            <span class="feature-icon">🏡</span>
             <strong>Family Atmosphere</strong>
             <span>Ambient i ngrohtë për familje, miq dhe momente të veçanta.</span>
           </div>
 
-          <div class="feature">
+          <div class="feature reveal reveal-delay-3">
+            <span class="feature-icon">✨</span>
             <strong>Premium Service</strong>
             <span>Shërbim korrekt, elegant dhe mikpritje tradicionale.</span>
           </div>
         </div>
       </div>
+
+      <div class="ornament-divider reveal"><span>✦</span></div>
     </section>
 
     <section class="menu-section" id="menu">
-      <h2 class="section-title">Our Menu</h2>
-      <p class="section-subtitle">
+      <h2 class="section-title reveal">Our Menu</h2>
+      <p class="section-subtitle reveal">
         Menu tradicionale shqiptare me përkthim në anglisht për klientët vendas dhe të huaj.
       </p>
 
       <div class="menu-wrapper">
 
-        <div class="menu-category">
-          <h3>Supërat</h3>
+        <div class="menu-category reveal">
+          <h3><span class="menu-cat-icon">🍲</span>Supërat</h3>
 
           <div class="menu-list">
 
@@ -926,8 +1112,8 @@
           </div>
         </div>
 
-        <div class="menu-category">
-          <h3>Mishërat</h3>
+        <div class="menu-category reveal reveal-delay-1">
+          <h3><span class="menu-cat-icon">🥩</span>Mishërat</h3>
 
           <div class="menu-list">
 
@@ -1006,8 +1192,8 @@
           </div>
         </div>
 
-        <div class="menu-category">
-          <h3>Gatime të Tjera</h3>
+        <div class="menu-category reveal reveal-delay-2">
+          <h3><span class="menu-cat-icon">🍽️</span>Gatime të Tjera</h3>
 
           <div class="menu-list">
 
@@ -1070,8 +1256,8 @@
           </div>
         </div>
 
-        <div class="menu-category">
-          <h3>Sallatera</h3>
+        <div class="menu-category reveal reveal-delay-3">
+          <h3><span class="menu-cat-icon">🥗</span>Sallatera</h3>
 
           <div class="menu-list">
 
@@ -1097,7 +1283,7 @@
       </div>
 
       <p class="menu-note">
-       We also serve coffee, soft drinks, tea, water, and selected beverages throughout the day. Prices are shown in Albanian Lek. For reservations or questions about the menu, please call us directly.
+        Prices are shown in Albanian Lek. For reservations or questions about the menu, please call us directly.
       </p>
     </section>
 
@@ -1107,7 +1293,7 @@
       <div class="contact-box">
         <address>
           <p><strong>Address:</strong> Rruga Islam Spahiu, Kukës, Albania</p>
-          <p><strong>Phone:</strong> <a href="tel:+355692041256">+355 69 2041256</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+35569566824">+355 69 5668241</a></p>
           <p><strong>Opening Hours:</strong> 06:00 - 22:00</p>
         </address>
 
@@ -1121,7 +1307,7 @@
         </iframe>
 
         <div class="contact-actions">
-          <a href="tel:+355692041256" class="btn">Call Now</a>
+          <a href="tel:+35569566824" class="btn">Call Now</a>
 
           <a 
             href="https://www.google.com/maps/search/?api=1&query=Bar%20Restaurant%20Sopi%20Kukes" 
@@ -1138,8 +1324,55 @@
   </main>
 
   <footer>
-    © 2026 Bar Restaurant Sopi Premium. All rights reserved.
+    <p class="footer-tagline">"Shija e shtëpisë, eleganca e restorantit."</p>
+    <p>© 2026 Bar Restaurant Sopi Premium — Kukës, Albania</p>
   </footer>
 
+  <script>
+    // ── Scroll reveal ──────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // ── Active nav link on scroll ──────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const activeObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const match = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(s => activeObs.observe(s));
+
+    // ── Hero floating gold particles ───────────────────────
+    const container = document.getElementById('heroParticles');
+    if (container) {
+      for (let i = 0; i < 22; i++) {
+        const dot = document.createElement('span');
+        const size = Math.random() * 3 + 1;
+        dot.style.cssText = `
+          left: ${Math.random() * 100}%;
+          bottom: ${Math.random() * 30}%;
+          width: ${size}px;
+          height: ${size}px;
+          --dur: ${4 + Math.random() * 6}s;
+          --delay: ${Math.random() * 8}s;
+          opacity: 0;
+        `;
+        container.appendChild(dot);
+      }
+    }
+  </script>
 </body>
 </html>
