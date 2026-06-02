@@ -341,6 +341,65 @@
     .menu-cat-icon { font-size: 1.1rem; margin-right: 0.15rem; }
     .menu-note { max-width: 900px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.92rem; }
 
+    /* MENU FILTERS */
+    .menu-filters {
+      max-width: 1150px;
+      margin: 0 auto 2rem;
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 0.5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .menu-filters::-webkit-scrollbar { display: none; }
+    .menu-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .menu-filter-btn:hover {
+      background: rgba(212,175,55,0.1);
+      border-color: rgba(212,175,55,0.45);
+      color: var(--accent-soft);
+      transform: translateY(-2px);
+    }
+    .menu-filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #080808;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(212,175,55,0.3);
+    }
+
+    /* Menu category fade transition */
+    .menu-category {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .menu-category.hidden {
+      display: none;
+    }
+    .menu-category.fade-in {
+      animation: menuFadeIn 0.4s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     /* CONTACT */
     .contact { background: linear-gradient(135deg, #090909, #151515); }
     .contact-box { max-width: 760px; margin: 0 auto; padding: 2.5rem; background: rgba(8,8,8,0.95); border-radius: 28px; border: 1px solid rgba(212,175,55,0.16); box-shadow: 0 30px 80px rgba(0,0,0,0.22); }
@@ -493,8 +552,16 @@
           </div>
         </div>
       </div>
+      <div class="menu-filters reveal">
+        <button class="menu-filter-btn active" data-filter="all">🍽️ Gjithçka</button>
+        <button class="menu-filter-btn" data-filter="superat">🍲 Gatime Tradicionale</button>
+        <button class="menu-filter-btn" data-filter="misherat">🥩 Zgarë &amp; Mish</button>
+        <button class="menu-filter-btn" data-filter="tjera">🍳 Të Tjera</button>
+        <button class="menu-filter-btn" data-filter="sallatera">🥗 Sallata</button>
+      </div>
+
       <div class="menu-wrapper">
-        <div class="menu-category reveal">
+        <div class="menu-category reveal" data-category="superat">
           <h3><span class="menu-cat-icon">🍲</span>Supërat</h3>
           <div class="menu-list">
             <div class="menu-item"><div><div class="menu-item-name">Supë Pule</div><span class="menu-item-en">Chicken Soup</span></div><div class="menu-price">250 lekë</div></div>
@@ -508,7 +575,7 @@
             <div class="menu-item"><div><div class="menu-item-name">Tavë Dheu</div><span class="menu-item-en">Traditional Clay Pot Dish</span></div><div class="menu-price">350 lekë</div></div>
           </div>
         </div>
-        <div class="menu-category reveal reveal-delay-1">
+        <div class="menu-category reveal reveal-delay-1" data-category="misherat">
           <h3><span class="menu-cat-icon">🥩</span>Mishërat</h3>
           <div class="menu-list">
             <div class="menu-item"><div><div class="menu-item-name">Qofte</div><span class="menu-item-en">Meatball</span></div><div class="menu-price">60 lekë</div></div>
@@ -522,7 +589,7 @@
             <div class="menu-item"><div><div class="menu-item-name">Brinjë Viçi</div><span class="menu-item-en">Beef Ribs</span></div><div class="menu-price">2500 lekë</div></div>
           </div>
         </div>
-        <div class="menu-category reveal reveal-delay-2">
+        <div class="menu-category reveal reveal-delay-2" data-category="tjera">
           <h3><span class="menu-cat-icon">🍽️</span>Gatime të Tjera</h3>
           <div class="menu-list">
             <div class="menu-item"><div><div class="menu-item-name">Pilaf</div><span class="menu-item-en">Rice Pilaf</span></div><div class="menu-price">100 lekë</div></div>
@@ -534,7 +601,7 @@
             <div class="menu-item"><div><div class="menu-item-name">Djathë Kaçkavall</div><span class="menu-item-en">Kashkaval Cheese</span></div><div class="menu-price">150 lekë</div></div>
           </div>
         </div>
-        <div class="menu-category reveal reveal-delay-3">
+        <div class="menu-category reveal reveal-delay-3" data-category="sallatera">
           <h3><span class="menu-cat-icon">🥗</span>Sallatera</h3>
           <div class="menu-list">
             <div class="menu-item"><div><div class="menu-item-name">Sallatë Greke e Vogël / e Madhe</div><span class="menu-item-en">Greek Salad – small / large</span></div><div class="menu-price">200 / 300 lekë</div></div>
@@ -750,6 +817,34 @@
         container.appendChild(dot);
       }
     }
+
+    // MENU FILTER / SWITCHER
+    const filterBtns = document.querySelectorAll('.menu-filter-btn');
+    const menuCategories = document.querySelectorAll('.menu-category[data-category]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        menuCategories.forEach(cat => {
+          const catId = cat.getAttribute('data-category');
+          if (filter === 'all' || catId === filter) {
+            cat.classList.remove('hidden');
+            // Trigger fade-in animation
+            cat.classList.remove('fade-in');
+            void cat.offsetWidth; // reflow to restart animation
+            cat.classList.add('fade-in');
+          } else {
+            cat.classList.add('hidden');
+            cat.classList.remove('fade-in');
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
