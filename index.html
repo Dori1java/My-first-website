@@ -195,22 +195,24 @@
     /* ── MENU SECTION ── */
     .menu-section { background: radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 32%), linear-gradient(180deg, #050505, #0b0b0b); }
 
-    /* MENU BANNER - FIXED for all screen sizes */
+    /* MENU BANNER — responsive & properly cropped on all screens */
     .menu-banner {
       max-width: 1150px;
       margin: 0 auto 2.5rem;
       border-radius: 20px;
       overflow: hidden;
       position: relative;
-      height: 280px;
       border: 1px solid rgba(212,175,55,0.2);
       box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+      /* Fixed height on desktop, natural on mobile */
+      height: 280px;
     }
     .menu-banner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 40%;
+      /* Show the center of the image — adjust vertical % to taste */
+      object-position: center 55%;
       transition: transform 0.7s ease;
       display: block;
     }
@@ -267,10 +269,7 @@
     .menu-cat-icon { font-size: 1.1rem; }
     .menu-note { max-width: 900px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.92rem; }
 
-    /* Full-width category (for single column layout) */
     .menu-category.full-width { grid-column: 1 / -1; }
-
-    /* Menu category fade */
     .menu-category.hidden { display: none; }
     .menu-category.fade-in { animation: menuFadeIn 0.4s cubic-bezier(0.22,1,0.36,1) both; }
     @keyframes menuFadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
@@ -383,7 +382,9 @@
       footer { font-size: 0.85rem; padding: 1rem; }
       .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 50px; height: 50px; }
       .whatsapp-float svg { width: 26px; height: 26px; }
+      /* On mobile the banner is shorter — show full image naturally */
       .menu-banner { height: 150px; }
+      .menu-banner img { object-position: center 50%; }
       .menu-banner-text p { display: none; }
       .reviews-avg { font-size: 2.8rem; }
     }
@@ -502,7 +503,7 @@
 
       <div class="menu-wrapper">
 
-        <!-- ══ USHQIM ══ -->
+        <!-- ══ USHQIM: Gatime Tradicionale ══ -->
         <div class="menu-category reveal" data-category="ushqim">
           <h3><span class="menu-cat-icon">🍲</span>Gatime Tradicionale / Traditional Dishes</h3>
           <div class="menu-list">
@@ -523,6 +524,7 @@
           </div>
         </div>
 
+        <!-- ══ USHQIM: Zgarë & Mish ══ -->
         <div class="menu-category reveal reveal-delay-1" data-category="ushqim">
           <h3><span class="menu-cat-icon">🥩</span>Zgarë &amp; Mish / Grill &amp; Meat</h3>
           <div class="menu-list">
@@ -540,6 +542,7 @@
           </div>
         </div>
 
+        <!-- ══ USHQIM: Të Tjera ══ -->
         <div class="menu-category reveal reveal-delay-2" data-category="ushqim">
           <h3><span class="menu-cat-icon">🍳</span>Të Tjera / Other Dishes</h3>
           <div class="menu-list">
@@ -555,6 +558,7 @@
           </div>
         </div>
 
+        <!-- ══ USHQIM: Sallata ══ -->
         <div class="menu-category reveal reveal-delay-3" data-category="ushqim">
           <h3><span class="menu-cat-icon">🥗</span>Sallata / Salads</h3>
           <div class="menu-list">
@@ -633,7 +637,7 @@
 
         <!-- ══ ALKOOLIKE ══ -->
         <div class="menu-category reveal reveal-delay-1" data-category="alkool">
-          <h3><span class="menu-cat-icon">🥃</span>Pije Alkoolike / Spirits &amp; Cocktails</h3>
+          <h3><span class="menu-cat-icon">🥃</span>Pije Alkoolike / Spirits &amp; Wine</h3>
           <div class="menu-list">
             <div class="menu-item"><div><div class="menu-item-name">Raki Rrushi</div><span class="menu-item-en">Grape Raki</span></div><div class="menu-price">60 L</div></div>
             <div class="menu-item"><div><div class="menu-item-name">Raki Kumbull</div><span class="menu-item-en">Plum Raki</span></div><div class="menu-price">60 L</div></div>
