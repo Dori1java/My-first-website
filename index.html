@@ -1,3 +1,4 @@
+cat > /home/claude/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="sq">
 <head>
@@ -138,153 +139,27 @@
     .feature strong { display: block; color: var(--accent-soft); margin-bottom: 0.35rem; }
     .feature span { color: var(--muted); font-size: 0.92rem; }
 
-    /* ── REVIEWS SECTION ── */
-    .reviews-section {
-      background: linear-gradient(180deg, #060606, #0c0c0c);
-      padding: 6rem 5%;
-    }
-
-    .reviews-top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 0.6rem;
-      flex-wrap: wrap;
-    }
-
-    .reviews-avg {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-    }
-
+    /* REVIEWS */
+    .reviews-section { background: linear-gradient(180deg, #060606, #0c0c0c); padding: 6rem 5%; }
+    .reviews-top { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+    .reviews-avg { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; color: var(--accent); line-height: 1; }
     .reviews-avg-right { text-align: left; }
-
     .reviews-avg-stars { font-size: 1.4rem; letter-spacing: 0.1rem; color: var(--accent); }
-
     .reviews-avg-count { color: var(--muted); font-size: 0.88rem; margin-top: 0.2rem; }
-
-    .reviews-grid {
-      max-width: 1100px;
-      margin: 2.5rem auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-    }
-
-    .review-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(212,175,55,0.14);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .review-card::before {
-      content: '\201C';
-      position: absolute;
-      top: -0.6rem;
-      left: 1.2rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem;
-      color: rgba(212,175,55,0.12);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .review-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(212,175,55,0.35);
-      box-shadow: 0 20px 55px rgba(212,175,55,0.08);
-    }
-
-    .review-stars {
-      display: flex;
-      gap: 0.2rem;
-    }
-
-    .review-stars span {
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
-
-    .review-text {
-      color: #d7d2c8;
-      font-size: 0.97rem;
-      line-height: 1.75;
-      flex: 1;
-      font-style: italic;
-    }
-
-    .review-author {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 1rem;
-    }
-
-    .review-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #8b6914);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1rem;
-      color: #080808;
-      flex-shrink: 0;
-    }
-
-    .review-name {
-      font-weight: 700;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    .review-source {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      color: var(--muted);
-      font-size: 0.78rem;
-      margin-top: 0.15rem;
-    }
-
-    .review-source svg {
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-    }
-
-    .reviews-badge {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .reviews-badge-inner {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      background: rgba(212,175,55,0.07);
-      border: 1px solid rgba(212,175,55,0.25);
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
+    .reviews-grid { max-width: 1100px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .review-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(212,175,55,0.14); border-radius: var(--radius); padding: 1.8rem; display: flex; flex-direction: column; gap: 1rem; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; }
+    .review-card::before { content: '\201C'; position: absolute; top: -0.6rem; left: 1.2rem; font-family: 'Playfair Display', serif; font-size: 5rem; color: rgba(212,175,55,0.12); line-height: 1; pointer-events: none; }
+    .review-card:hover { transform: translateY(-5px); border-color: rgba(212,175,55,0.35); box-shadow: 0 20px 55px rgba(212,175,55,0.08); }
+    .review-stars { display: flex; gap: 0.2rem; }
+    .review-stars span { color: var(--accent); font-size: 1.1rem; }
+    .review-text { color: #d7d2c8; font-size: 0.97rem; line-height: 1.75; flex: 1; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1rem; }
+    .review-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #8b6914); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; color: #080808; flex-shrink: 0; }
+    .review-name { font-weight: 700; color: var(--text); font-size: 0.95rem; }
+    .review-source { display: flex; align-items: center; gap: 0.3rem; color: var(--muted); font-size: 0.78rem; margin-top: 0.15rem; }
+    .review-source svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .reviews-badge { display: flex; justify-content: center; margin-top: 2rem; }
+    .reviews-badge-inner { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.4rem; border-radius: 999px; background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.25); color: var(--muted); font-size: 0.85rem; }
     .reviews-badge-inner span { color: var(--accent); font-weight: 700; }
 
     /* HOURS */
@@ -318,28 +193,33 @@
     .social-link.tiktok { color: #fff; border-color: rgba(255,255,255,0.15); }
     .social-link.tiktok:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
 
-    /* MENU */
+    /* ── MENU SECTION ── */
     .menu-section { background: radial-gradient(circle at top right, rgba(212,175,55,0.08), transparent 32%), linear-gradient(180deg, #050505, #0b0b0b); }
-    .menu-banner { max-width: 1150px; margin: 0 auto 2.5rem; border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 21/7; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 24px 70px rgba(0,0,0,0.45); }
-    .menu-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center center; transition: transform 0.7s ease; }
+
+    /* MENU BANNER - FIXED for all screen sizes */
+    .menu-banner {
+      max-width: 1150px;
+      margin: 0 auto 2.5rem;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      height: 280px;
+      border: 1px solid rgba(212,175,55,0.2);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+    }
+    .menu-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      transition: transform 0.7s ease;
+      display: block;
+    }
     .menu-banner:hover img { transform: scale(1.03); }
     .menu-banner-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, transparent 55%, rgba(0,0,0,0.3) 100%); display: flex; align-items: center; padding: 0 2.5rem; }
     .menu-banner-text { max-width: 340px; }
     .menu-banner-text h3 { font-family: 'Playfair Display', serif; color: var(--accent); font-size: clamp(1.4rem, 2.5vw, 2.2rem); margin-bottom: 0.4rem; line-height: 1.15; }
     .menu-banner-text p { color: rgba(255,255,255,0.72); font-size: 0.9rem; }
-    .menu-wrapper { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
-    .menu-category { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.7rem; box-shadow: 0 22px 55px rgba(0,0,0,0.24); }
-    .menu-category h3 { color: var(--accent); font-size: 1.35rem; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.10rem; display: flex; align-items: center; gap: 0.7rem; }
-    .menu-category h3::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(212,175,55,0.45), transparent); }
-    .menu-list { display: grid; gap: 0.95rem; }
-    .menu-item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; padding-bottom: 0.95rem; padding-left: 6px; padding-right: 6px; border-bottom: 1px dashed rgba(255,255,255,0.10); border-radius: 8px; transition: background 0.2s ease; }
-    .menu-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .menu-item:hover { background: rgba(212,175,55,0.05); }
-    .menu-item-name { color: var(--text); font-size: 1rem; font-weight: 700; line-height: 1.35; }
-    .menu-item-en { display: block; margin-top: 0.18rem; color: var(--muted); font-size: 0.86rem; font-weight: 500; }
-    .menu-price { color: var(--accent-soft); font-weight: 800; white-space: nowrap; font-size: 0.98rem; }
-    .menu-cat-icon { font-size: 1.1rem; margin-right: 0.15rem; }
-    .menu-note { max-width: 900px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.92rem; }
 
     /* MENU FILTERS */
     .menu-filters {
@@ -371,34 +251,30 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .menu-filter-btn:hover {
-      background: rgba(212,175,55,0.1);
-      border-color: rgba(212,175,55,0.45);
-      color: var(--accent-soft);
-      transform: translateY(-2px);
-    }
-    .menu-filter-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #080808;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(212,175,55,0.3);
-    }
+    .menu-filter-btn:hover { background: rgba(212,175,55,0.1); border-color: rgba(212,175,55,0.45); color: var(--accent-soft); transform: translateY(-2px); }
+    .menu-filter-btn.active { background: var(--accent); border-color: var(--accent); color: #080808; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212,175,55,0.3); }
 
-    /* Menu category fade transition */
-    .menu-category {
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-    .menu-category.hidden {
-      display: none;
-    }
-    .menu-category.fade-in {
-      animation: menuFadeIn 0.4s cubic-bezier(0.22,1,0.36,1) both;
-    }
-    @keyframes menuFadeIn {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    .menu-wrapper { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+    .menu-category { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.7rem; box-shadow: 0 22px 55px rgba(0,0,0,0.24); transition: opacity 0.35s ease, transform 0.35s ease; }
+    .menu-category h3 { color: var(--accent); font-size: 1.35rem; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 0.10rem; display: flex; align-items: center; gap: 0.7rem; }
+    .menu-category h3::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(212,175,55,0.45), transparent); }
+    .menu-list { display: grid; gap: 0.95rem; }
+    .menu-item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; padding: 0.5rem 6px; border-bottom: 1px dashed rgba(255,255,255,0.10); border-radius: 8px; transition: background 0.2s ease; }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item:hover { background: rgba(212,175,55,0.05); }
+    .menu-item-name { color: var(--text); font-size: 1rem; font-weight: 700; line-height: 1.35; }
+    .menu-item-en { display: block; margin-top: 0.18rem; color: var(--muted); font-size: 0.86rem; font-weight: 500; font-style: italic; }
+    .menu-price { color: var(--accent-soft); font-weight: 800; white-space: nowrap; font-size: 0.98rem; padding-top: 2px; }
+    .menu-cat-icon { font-size: 1.1rem; }
+    .menu-note { max-width: 900px; margin: 2rem auto 0; text-align: center; color: var(--muted); font-size: 0.92rem; }
+
+    /* Full-width category (for single column layout) */
+    .menu-category.full-width { grid-column: 1 / -1; }
+
+    /* Menu category fade */
+    .menu-category.hidden { display: none; }
+    .menu-category.fade-in { animation: menuFadeIn 0.4s cubic-bezier(0.22,1,0.36,1) both; }
+    @keyframes menuFadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
     /* CONTACT */
     .contact { background: linear-gradient(135deg, #090909, #151515); }
@@ -445,12 +321,73 @@
     @keyframes subtleGlow { from { text-shadow: 0 0 8px rgba(212,175,55,0); } to { text-shadow: 0 0 18px rgba(212,175,55,0.45); } }
 
     /* RESPONSIVE */
-    @media (max-width: 980px) { .menu-wrapper { grid-template-columns: 1fr; } .menu-banner { aspect-ratio: 16/7; } .reviews-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 900px) { nav { padding: 1rem 4%; } .hero { padding-top: 7rem; } .about-features { grid-template-columns: 1fr; } .about-photo-wrap { aspect-ratio: 16/8; } }
-    @media (max-width: 860px) { .stats-row { grid-template-columns: repeat(2, 1fr); } .nav-toggle-label { display: block; } .nav-links { position: fixed; top: 72px; right: -100%; width: min(320px, 84vw); height: calc(100vh - 72px); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 1.4rem; padding: 1.8rem 1.5rem; background: rgba(8,8,8,0.98); border-left: 1px solid rgba(255,255,255,0.05); box-shadow: -10px 0 40px rgba(0,0,0,0.35); transition: right 0.25s ease; } .nav-links a { width: 100%; font-size: 1rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); } .nav-toggle:checked + .nav-toggle-label span { transform: translateY(-50%) rotate(45deg); } .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(90deg); } .nav-toggle:checked + .nav-toggle-label span::after { opacity: 0; } .nav-toggle:checked + .nav-toggle-label + .nav-links { right: 0; } }
+    @media (max-width: 980px) {
+      .menu-wrapper { grid-template-columns: 1fr; }
+      .menu-banner { height: 220px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 4%; }
+      .hero { padding-top: 7rem; }
+      .about-features { grid-template-columns: 1fr; }
+      .about-photo-wrap { aspect-ratio: 16/8; }
+    }
+    @media (max-width: 860px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .nav-toggle-label { display: block; }
+      .nav-links { position: fixed; top: 72px; right: -100%; width: min(320px, 84vw); height: calc(100vh - 72px); flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 1.4rem; padding: 1.8rem 1.5rem; background: rgba(8,8,8,0.98); border-left: 1px solid rgba(255,255,255,0.05); box-shadow: -10px 0 40px rgba(0,0,0,0.35); transition: right 0.25s ease; }
+      .nav-links a { width: 100%; font-size: 1rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .nav-toggle:checked + .nav-toggle-label span { transform: translateY(-50%) rotate(45deg); }
+      .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(90deg); }
+      .nav-toggle:checked + .nav-toggle-label span::after { opacity: 0; }
+      .nav-toggle:checked + .nav-toggle-label + .nav-links { right: 0; }
+    }
     @media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 680px) { section { padding: 4.5rem 4%; } .hero-content { padding: 2rem; } .section-title { font-size: 2rem; letter-spacing: 0.12rem; } .hero-actions, .contact-actions { flex-direction: column; } .btn { width: 100%; } .contact-box { padding: 1.8rem; } .menu-banner { aspect-ratio: 4/3; } .menu-banner-overlay { padding: 0 1.5rem; } .menu-banner-text h3 { font-size: 1.3rem; } }
-    @media (max-width: 520px) { nav { padding: 0.85rem 1rem; } .logo { font-size: 1.15rem; letter-spacing: 0.12rem; } .logo-img { width: 34px; height: 34px; } .nav-toggle-label { width: 2rem; height: 1.6rem; } .nav-links { top: 61px; right: -100%; width: 100%; height: calc(100vh - 61px); position: fixed; align-items: center; padding: 2rem 1.2rem; } .nav-links a { width: 100%; text-align: center; font-size: 1.05rem; padding: 1rem 0; } .hero { min-height: 100vh; padding: 5.5rem 1rem 2rem; } .hero-content { padding: 1.6rem 1.2rem; border-radius: 18px; } .hero-kicker { font-size: 0.7rem; letter-spacing: 0.15rem; } .hero h1 { font-size: 2.22rem; line-height: 1.08; letter-spacing: 0.04rem; } .hero p { font-size: 0.98rem; margin-bottom: 1.5rem; } section { padding: 3.5rem 1rem; } .about-card { padding: 2rem 1.2rem; border-radius: 18px; } .about-photo-wrap { aspect-ratio: 16/9; border-radius: 14px; } .about-card > p { font-size: 0.95rem; } .section-title { font-size: 1.65rem; letter-spacing: 0.08rem; margin-bottom: 1.5rem; } .section-subtitle { font-size: 0.92rem; margin-bottom: 2rem; } .menu-category { padding: 1.2rem; border-radius: 18px; } .menu-category h3 { font-size: 1.05rem; letter-spacing: 0.08rem; } .menu-item { grid-template-columns: 1fr; gap: 0.35rem; } .menu-item-name { font-size: 0.98rem; } .menu-item-en { font-size: 0.82rem; } .menu-price { font-size: 0.95rem; } .contact-box { padding: 1.2rem; border-radius: 18px; } .contact-box p { font-size: 0.95rem; } iframe { min-height: 240px; } footer { font-size: 0.85rem; padding: 1rem; } .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 50px; height: 50px; } .whatsapp-float svg { width: 26px; height: 26px; } .menu-banner { aspect-ratio: unset; min-height: 200px; } .menu-banner-text p { display: none; } .reviews-avg { font-size: 2.8rem; } }
+    @media (max-width: 680px) {
+      section { padding: 4.5rem 4%; }
+      .hero-content { padding: 2rem; }
+      .section-title { font-size: 2rem; letter-spacing: 0.12rem; }
+      .hero-actions, .contact-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .contact-box { padding: 1.8rem; }
+      .menu-banner { height: 180px; }
+      .menu-banner-overlay { padding: 0 1.5rem; }
+      .menu-banner-text h3 { font-size: 1.3rem; }
+    }
+    @media (max-width: 520px) {
+      nav { padding: 0.85rem 1rem; }
+      .logo { font-size: 1.15rem; letter-spacing: 0.12rem; }
+      .logo-img { width: 34px; height: 34px; }
+      .nav-toggle-label { width: 2rem; height: 1.6rem; }
+      .nav-links { top: 61px; right: -100%; width: 100%; height: calc(100vh - 61px); position: fixed; align-items: center; padding: 2rem 1.2rem; }
+      .nav-links a { width: 100%; text-align: center; font-size: 1.05rem; padding: 1rem 0; }
+      .hero { min-height: 100vh; padding: 5.5rem 1rem 2rem; }
+      .hero-content { padding: 1.6rem 1.2rem; border-radius: 18px; }
+      .hero-kicker { font-size: 0.7rem; letter-spacing: 0.15rem; }
+      .hero h1 { font-size: 2.22rem; line-height: 1.08; letter-spacing: 0.04rem; }
+      .hero p { font-size: 0.98rem; margin-bottom: 1.5rem; }
+      section { padding: 3.5rem 1rem; }
+      .about-card { padding: 2rem 1.2rem; border-radius: 18px; }
+      .about-photo-wrap { aspect-ratio: 16/9; border-radius: 14px; }
+      .about-card > p { font-size: 0.95rem; }
+      .section-title { font-size: 1.65rem; letter-spacing: 0.08rem; margin-bottom: 1.5rem; }
+      .section-subtitle { font-size: 0.92rem; margin-bottom: 2rem; }
+      .menu-category { padding: 1.2rem; border-radius: 18px; }
+      .menu-category h3 { font-size: 1.05rem; letter-spacing: 0.08rem; }
+      .menu-item { grid-template-columns: 1fr auto; gap: 0.5rem; }
+      .menu-item-name { font-size: 0.95rem; }
+      .menu-item-en { font-size: 0.8rem; }
+      .menu-price { font-size: 0.9rem; }
+      .contact-box { padding: 1.2rem; border-radius: 18px; }
+      .contact-box p { font-size: 0.95rem; }
+      iframe { min-height: 240px; }
+      footer { font-size: 0.85rem; padding: 1rem; }
+      .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 50px; height: 50px; }
+      .whatsapp-float svg { width: 26px; height: 26px; }
+      .menu-banner { height: 150px; }
+      .menu-banner-text p { display: none; }
+      .reviews-avg { font-size: 2.8rem; }
+    }
     @media (max-width: 480px) { .stats-row { grid-template-columns: 1fr 1fr; gap: 1rem; } .stat-number { font-size: 2rem; } }
     @media (max-width: 360px) { .hero h1 { font-size: 1.95rem; } .hero p { font-size: 0.92rem; } }
   </style>
@@ -542,81 +479,192 @@
     <!-- MENU -->
     <section class="menu-section" id="menu">
       <h2 class="section-title reveal">Menuja Jonë</h2>
-      <p class="section-subtitle reveal">Menu tradicionale shqiptare me përkthim në anglisht për klientët vendas dhe të huaj.</p>
+      <p class="section-subtitle reveal">Menu tradicionale shqiptare me përkthim në anglisht — Traditional Albanian menu with English translation.</p>
+
       <div class="menu-banner reveal">
-        <img src="KombinimMishi.jpg" alt="Kombinimet tona të mishit — pjata tradicionale shqiptare" loading="lazy" />
+        <img src="KombinimMishi.jpg" alt="Kombinimi i mishit — pjata tradicionale shqiptare" loading="lazy" />
         <div class="menu-banner-overlay">
           <div class="menu-banner-text">
-            <h3>Pjata tona<br>të Mishit</h3>
-            <p>Zgjidhni nga kombinimi ynë i mishrave të freskëta, të gatuara me kujdes.</p>
+            <h3>Pjata tona<br>Tradicionale</h3>
+            <p>Gatime të freskëta, të përgatitura me kujdes çdo ditë.</p>
           </div>
         </div>
       </div>
+
+      <!-- FILTERS -->
       <div class="menu-filters reveal">
-        <button class="menu-filter-btn active" data-filter="all">🍽️ Gjithçka</button>
-        <button class="menu-filter-btn" data-filter="superat">🍲 Gatime Tradicionale</button>
-        <button class="menu-filter-btn" data-filter="misherat">🥩 Zgarë &amp; Mish</button>
-        <button class="menu-filter-btn" data-filter="tjera">🍳 Të Tjera</button>
-        <button class="menu-filter-btn" data-filter="sallatera">🥗 Sallata</button>
+        <button class="menu-filter-btn active" data-filter="all">🍽️ Gjithçka / All</button>
+        <button class="menu-filter-btn" data-filter="ushqim">🥩 Ushqim / Food</button>
+        <button class="menu-filter-btn" data-filter="kafe">☕ Kafe / Coffee</button>
+        <button class="menu-filter-btn" data-filter="birra">🍺 Birra / Beer</button>
+        <button class="menu-filter-btn" data-filter="pije">🥤 Pije / Drinks</button>
+        <button class="menu-filter-btn" data-filter="alkool">🥃 Alkoolike / Spirits</button>
       </div>
 
       <div class="menu-wrapper">
-        <div class="menu-category reveal" data-category="superat">
-          <h3><span class="menu-cat-icon">🍲</span>Supërat</h3>
+
+        <!-- ══ USHQIM ══ -->
+        <div class="menu-category reveal" data-category="ushqim">
+          <h3><span class="menu-cat-icon">🍲</span>Gatime Tradicionale / Traditional Dishes</h3>
           <div class="menu-list">
-            <div class="menu-item"><div><div class="menu-item-name">Supë Pule</div><span class="menu-item-en">Chicken Soup</span></div><div class="menu-price">250 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tasqebab</div><span class="menu-item-en">Traditional Beef Stew</span></div><div class="menu-price">350 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Paçe Koke</div><span class="menu-item-en">Traditional Head Soup</span></div><div class="menu-price">250 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Supë Patate</div><span class="menu-item-en">Potato Soup – pa mish / me mish</span></div><div class="menu-price">200 / 350 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Supë Perime</div><span class="menu-item-en">Vegetable Soup – pa mish / me mish</span></div><div class="menu-price">200 / 350 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fasule</div><span class="menu-item-en">Beans – pa mish / me mish</span></div><div class="menu-price">200 / 350 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Qofte me Lëng</div><span class="menu-item-en">Meatballs in Broth</span></div><div class="menu-price">250 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mish me Lëng</div><span class="menu-item-en">Meat in Broth</span></div><div class="menu-price">300 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Tavë Dheu</div><span class="menu-item-en">Traditional Clay Pot Dish</span></div><div class="menu-price">350 lekë</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Supë Pule</div><span class="menu-item-en">Chicken Soup</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Tasqebap</div><span class="menu-item-en">Traditional Beef Stew</span></div><div class="menu-price">350 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Tavë Dheu</div><span class="menu-item-en">Traditional Clay Pot</span></div><div class="menu-price">350 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Paçe Koke</div><span class="menu-item-en">Traditional Head Soup</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Fasule</div><span class="menu-item-en">Bean Stew</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mish me Lëng</div><span class="menu-item-en">Meat in Broth</span></div><div class="menu-price">300 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mish Fasule</div><span class="menu-item-en">Meat with Beans</span></div><div class="menu-price">350 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mish Patate</div><span class="menu-item-en">Meat with Potatoes</span></div><div class="menu-price">350 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mish Bishta</div><span class="menu-item-en">Oxtail Stew</span></div><div class="menu-price">350 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mish Turli</div><span class="menu-item-en">Mixed Meat &amp; Vegetables</span></div><div class="menu-price">350 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Mish Sadë</div><span class="menu-item-en">Plain Boiled Meat</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Turli Sadë</div><span class="menu-item-en">Plain Mixed Vegetables</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Patate me Lëng</div><span class="menu-item-en">Potato Stew</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Qofte me Lëng</div><span class="menu-item-en">Meatballs in Broth</span></div><div class="menu-price">250 L</div></div>
           </div>
         </div>
-        <div class="menu-category reveal reveal-delay-1" data-category="misherat">
-          <h3><span class="menu-cat-icon">🥩</span>Mishërat</h3>
+
+        <div class="menu-category reveal reveal-delay-1" data-category="ushqim">
+          <h3><span class="menu-cat-icon">🥩</span>Zgarë &amp; Mish / Grill &amp; Meat</h3>
           <div class="menu-list">
-            <div class="menu-item"><div><div class="menu-item-name">Qofte</div><span class="menu-item-en">Meatball</span></div><div class="menu-price">60 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Mish i Zier</div><span class="menu-item-en">Boiled Meat</span></div><div class="menu-price">250 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Biftek</div><span class="menu-item-en">Beef Steak</span></div><div class="menu-price">600 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Biftek me Patate të Skuqura</div><span class="menu-item-en">Beef Steak with French Fries</span></div><div class="menu-price">700 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fileto Pule Zgare</div><span class="menu-item-en">Grilled Chicken Fillet</span></div><div class="menu-price">500 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Fileto Pule me Patate të Skuqura</div><span class="menu-item-en">Chicken Fillet with French Fries</span></div><div class="menu-price">600 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Garniturë</div><span class="menu-item-en">Mixed Side Dish</span></div><div class="menu-price">800 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Shishqebab i Hapur</div><span class="menu-item-en">Open Shish Kebab</span></div><div class="menu-price">2500 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Brinjë Viçi</div><span class="menu-item-en">Beef Ribs</span></div><div class="menu-price">2500 lekë</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Biftek (200 gr)</div><span class="menu-item-en">Beef Steak 200g</span></div><div class="menu-price">600 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Biftek me Patate</div><span class="menu-item-en">Beef Steak with Fries</span></div><div class="menu-price">700 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Fileto Pule</div><span class="menu-item-en">Grilled Chicken Fillet</span></div><div class="menu-price">500 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Fileto Pule me Patate</div><span class="menu-item-en">Chicken Fillet with Fries</span></div><div class="menu-price">600 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Qofte</div><span class="menu-item-en">Grilled Meatball</span></div><div class="menu-price">70 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Shishqebap i Hapur (1 kg)</div><span class="menu-item-en">Open Shish Kebab 1kg</span></div><div class="menu-price">2,200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Brinjë Viçi (1 kg)</div><span class="menu-item-en">Beef Ribs 1kg</span></div><div class="menu-price">2,200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kombinim Mishi</div><span class="menu-item-en">Mixed Meat Platter</span></div><div class="menu-price">1,000 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Garniturë</div><span class="menu-item-en">Mixed Side Dish</span></div><div class="menu-price">800 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Patate të Skuqura — Vogël</div><span class="menu-item-en">French Fries — Small</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Patate të Skuqura — Madhe</div><span class="menu-item-en">French Fries — Large</span></div><div class="menu-price">250 L</div></div>
           </div>
         </div>
-        <div class="menu-category reveal reveal-delay-2" data-category="tjera">
-          <h3><span class="menu-cat-icon">🍽️</span>Gatime të Tjera</h3>
+
+        <div class="menu-category reveal reveal-delay-2" data-category="ushqim">
+          <h3><span class="menu-cat-icon">🍳</span>Të Tjera / Other Dishes</h3>
           <div class="menu-list">
-            <div class="menu-item"><div><div class="menu-item-name">Pilaf</div><span class="menu-item-en">Rice Pilaf</span></div><div class="menu-price">100 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Makarona</div><span class="menu-item-en">Pasta</span></div><div class="menu-price">100 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Makarona me Salcë</div><span class="menu-item-en">Pasta with Sauce</span></div><div class="menu-price">200 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Kos</div><span class="menu-item-en">Yogurt</span></div><div class="menu-price">100 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Vezë Omletë</div><span class="menu-item-en">Omelette</span></div><div class="menu-price">100 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Djathë i Bardhë</div><span class="menu-item-en">White Cheese</span></div><div class="menu-price">100 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Djathë Kaçkavall</div><span class="menu-item-en">Kashkaval Cheese</span></div><div class="menu-price">150 lekë</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Pilaf</div><span class="menu-item-en">Rice Pilaf</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Makarona</div><span class="menu-item-en">Plain Pasta</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Makarona me Salcë</div><span class="menu-item-en">Pasta with Sauce</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Vezë Omletë</div><span class="menu-item-en">Omelette</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kos</div><span class="menu-item-en">Yogurt</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Djathë i Bardhë</div><span class="menu-item-en">White Cheese</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Djathë Kaçkavall</div><span class="menu-item-en">Kashkaval Cheese</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Salcë Kosi</div><span class="menu-item-en">Yogurt Sauce</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Tarator</div><span class="menu-item-en">Yogurt &amp; Cucumber Dip</span></div><div class="menu-price">100 L</div></div>
           </div>
         </div>
-        <div class="menu-category reveal reveal-delay-3" data-category="sallatera">
-          <h3><span class="menu-cat-icon">🥗</span>Sallatera</h3>
+
+        <div class="menu-category reveal reveal-delay-3" data-category="ushqim">
+          <h3><span class="menu-cat-icon">🥗</span>Sallata / Salads</h3>
           <div class="menu-list">
-            <div class="menu-item"><div><div class="menu-item-name">Sallatë Greke e Vogël / e Madhe</div><span class="menu-item-en">Greek Salad – small / large</span></div><div class="menu-price">200 / 300 lekë</div></div>
-            <div class="menu-item"><div><div class="menu-item-name">Sallatë Turshi e Vogël / e Madhe</div><span class="menu-item-en">Pickled Salad – small / large</span></div><div class="menu-price">200 / 300 lekë</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Sallatë Greke — Vogël</div><span class="menu-item-en">Greek Salad — Small</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Sallatë Greke — Madhe</div><span class="menu-item-en">Greek Salad — Large</span></div><div class="menu-price">300 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Sallatë Turshi — Vogël</div><span class="menu-item-en">Pickled Salad — Small</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Sallatë Turshi — Madhe</div><span class="menu-item-en">Pickled Salad — Large</span></div><div class="menu-price">300 L</div></div>
           </div>
         </div>
+
+        <!-- ══ KAFE ══ -->
+        <div class="menu-category reveal" data-category="kafe">
+          <h3><span class="menu-cat-icon">☕</span>Kafe &amp; Çaj / Coffee &amp; Tea</h3>
+          <div class="menu-list">
+            <div class="menu-item"><div><div class="menu-item-name">Kafe Ekspres</div><span class="menu-item-en">Espresso</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Makiato e Vogël</div><span class="menu-item-en">Small Macchiato</span></div><div class="menu-price">70 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Makiato e Madhe</div><span class="menu-item-en">Large Macchiato</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kapuçino</div><span class="menu-item-en">Cappuccino</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Amerikano</div><span class="menu-item-en">Americano Coffee</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Nescafé</div><span class="menu-item-en">Instant Coffee</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Çaj</div><span class="menu-item-en">Tea</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kakao e Vogël</div><span class="menu-item-en">Small Hot Chocolate</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kakao e Madhe</div><span class="menu-item-en">Large Hot Chocolate</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Çokollatë e Shkrirë</div><span class="menu-item-en">Melted Chocolate Drink</span></div><div class="menu-price">150 L</div></div>
+          </div>
+        </div>
+
+        <!-- ══ BIRRA ══ -->
+        <div class="menu-category reveal reveal-delay-1" data-category="birra">
+          <h3><span class="menu-cat-icon">🍺</span>Birra / Beer</h3>
+          <div class="menu-list">
+            <div class="menu-item"><div><div class="menu-item-name">Amstel Kanaçe</div><span class="menu-item-en">Amstel Can</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Amstel Shishe</div><span class="menu-item-en">Amstel Bottle</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Korça e Vogël</div><span class="menu-item-en">Korça Small</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Korça e Madhe</div><span class="menu-item-en">Korça Large</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kriko e Vogël</div><span class="menu-item-en">Kriko Small</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Kriko e Madhe</div><span class="menu-item-en">Kriko Large</span></div><div class="menu-price">170 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Peja e Vogël</div><span class="menu-item-en">Peja Small</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Peja e Madhe</div><span class="menu-item-en">Peja Large</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Elbar e Vogël</div><span class="menu-item-en">Elbar Small</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Moretti</div><span class="menu-item-en">Birra Moretti</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Heineken</div><span class="menu-item-en">Heineken</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Peroni</div><span class="menu-item-en">Peroni</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Paulaner</div><span class="menu-item-en">Paulaner</span></div><div class="menu-price">400 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Corona</div><span class="menu-item-en">Corona</span></div><div class="menu-price">300 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Birë Pa Alkool</div><span class="menu-item-en">Non-Alcoholic Beer</span></div><div class="menu-price">150 L</div></div>
+          </div>
+        </div>
+
+        <!-- ══ PIJE FRESKUESE ══ -->
+        <div class="menu-category reveal" data-category="pije">
+          <h3><span class="menu-cat-icon">🥤</span>Pije Freskuese / Soft Drinks</h3>
+          <div class="menu-list">
+            <div class="menu-item"><div><div class="menu-item-name">Coca Cola</div><span class="menu-item-en">Coca-Cola</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Fanta</div><span class="menu-item-en">Fanta</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Pepsi</div><span class="menu-item-en">Pepsi</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Schweppes Lemon</div><span class="menu-item-en">Schweppes Lemon</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Schweppes Tonic</div><span class="menu-item-en">Schweppes Tonic Water</span></div><div class="menu-price">120 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Lemon Soda</div><span class="menu-item-en">Lemon Soda</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Red Bull</div><span class="menu-item-en">Red Bull Energy Drink</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">B52</div><span class="menu-item-en">B52 Energy Drink</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Golden Eagle</div><span class="menu-item-en">Golden Eagle Energy Drink</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Amita</div><span class="menu-item-en">Amita Juice</span></div><div class="menu-price">120 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Bravo</div><span class="menu-item-en">Bravo Juice</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">IVI</div><span class="menu-item-en">IVI Juice</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Suko</div><span class="menu-item-en">Fruit Concentrate</span></div><div class="menu-price">70 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Çaj i Ftohtë</div><span class="menu-item-en">Iced Tea</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Dhallë</div><span class="menu-item-en">Buttermilk / Ayran</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Ujë Natyral</div><span class="menu-item-en">Still Water</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Ujë me Gaz</div><span class="menu-item-en">Sparkling Water</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Ujë Vitamina</div><span class="menu-item-en">Vitamin Water</span></div><div class="menu-price">120 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Biter</div><span class="menu-item-en">Bitters Aperitif</span></div><div class="menu-price">70 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Akullore</div><span class="menu-item-en">Ice Cream</span></div><div class="menu-price">50 L</div></div>
+          </div>
+        </div>
+
+        <!-- ══ ALKOOLIKE ══ -->
+        <div class="menu-category reveal reveal-delay-1" data-category="alkool">
+          <h3><span class="menu-cat-icon">🥃</span>Pije Alkoolike / Spirits &amp; Cocktails</h3>
+          <div class="menu-list">
+            <div class="menu-item"><div><div class="menu-item-name">Raki Rrushi</div><span class="menu-item-en">Grape Raki</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Raki Kumbull</div><span class="menu-item-en">Plum Raki</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Raki Vendi</div><span class="menu-item-en">Local Raki</span></div><div class="menu-price">60 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Konjak</div><span class="menu-item-en">Cognac</span></div><div class="menu-price">80 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Ponç</div><span class="menu-item-en">Punch</span></div><div class="menu-price">70 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Fernet</div><span class="menu-item-en">Fernet Digestif</span></div><div class="menu-price">80 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Fernet Branca</div><span class="menu-item-en">Fernet Branca</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Amaro</div><span class="menu-item-en">Amaro Liqueur</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Martini</div><span class="menu-item-en">Martini Vermouth</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Juniperus</div><span class="menu-item-en">Juniperus Albanian Gin</span></div><div class="menu-price">100 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Gin</div><span class="menu-item-en">Gin</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Smirnoff</div><span class="menu-item-en">Smirnoff Vodka</span></div><div class="menu-price">200 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">JB</div><span class="menu-item-en">J&amp;B Scotch Whisky</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Johnnie Walker</div><span class="menu-item-en">Johnnie Walker Whisky</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Jack Daniel's</div><span class="menu-item-en">Jack Daniel's Whiskey</span></div><div class="menu-price">300 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Vecchia Romagna</div><span class="menu-item-en">Vecchia Romagna Brandy</span></div><div class="menu-price">250 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Verë në Gotë</div><span class="menu-item-en">Wine by the Glass</span></div><div class="menu-price">150 L</div></div>
+            <div class="menu-item"><div><div class="menu-item-name">Verë 0.5 L</div><span class="menu-item-en">Wine — Half Bottle 0.5L</span></div><div class="menu-price">700 L</div></div>
+          </div>
+        </div>
+
       </div>
-      <p class="menu-note reveal">Çmimet janë në Lekë Shqiptar. Për rezervime ose pyetje rreth menusë, na kontaktoni direkt.</p>
+      <p class="menu-note reveal">Çmimet janë në Lekë Shqiptar (ALL). Prices are in Albanian Lek (ALL). · Për rezervime: <a href="tel:+355692041256" style="color:var(--accent)">+355 69 204 1256</a></p>
     </section>
 
     <!-- REVIEWS -->
     <section class="reviews-section" id="reviews">
       <h2 class="section-title reveal">Çfarë Thonë Klientët</h2>
-      <p class="section-subtitle reveal">Opinione reale nga vizitorët tanë</p>
-
+      <p class="section-subtitle reveal">Opinione reale nga vizitorët tanë / Real reviews from our guests</p>
       <div class="reviews-top reveal">
         <div class="reviews-avg">5.0</div>
         <div class="reviews-avg-right">
@@ -624,17 +672,10 @@
           <div class="reviews-avg-count">Bazuar në 3 reviews • Google Maps</div>
         </div>
       </div>
-
       <div class="reviews-grid">
-
-        <!-- Review 1 -->
         <div class="review-card reveal reveal-delay-1">
-          <div class="review-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="review-text">
-            "We just had dinner at Sopi restaurant. We tried very tasty meats with a good salad, fries and bread. We were served very friendly by the nephew of the owner of the restaurant. We recommend!"
-          </p>
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"We just had dinner at Sopi restaurant. We tried very tasty meats with a good salad, fries and bread. We were served very friendly by the nephew of the owner of the restaurant. We recommend!"</p>
           <div class="review-author">
             <div class="review-avatar">P</div>
             <div>
@@ -646,15 +687,9 @@
             </div>
           </div>
         </div>
-
-        <!-- Review 2 -->
         <div class="review-card reveal reveal-delay-2">
-          <div class="review-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="review-text">
-            "Great place with good food!! Very nice staff who told us a lot about the city and recommended new destinations! Recommended!"
-          </p>
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Great place with good food!! Very nice staff who told us a lot about the city and recommended new destinations! Recommended!"</p>
           <div class="review-author">
             <div class="review-avatar">G</div>
             <div>
@@ -666,15 +701,9 @@
             </div>
           </div>
         </div>
-
-        <!-- Review 3 -->
         <div class="review-card reveal reveal-delay-3">
-          <div class="review-stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <p class="review-text">
-            "A restaurant near the Kukës bus stop. Plenty of seating, and both the terrace and indoor areas are comfortable. The restrooms are clean. The Tasqebap has a slightly strong flavor that goes well with bread and is delicious. The small Greek salad is served in a surprisingly large portion. Suitable for both solo diners and large groups."
-          </p>
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"A restaurant near the Kukës bus stop. Plenty of seating, and both the terrace and indoor areas are comfortable. The restrooms are clean. The Tasqebap has a slightly strong flavor that goes well with bread and is delicious. The small Greek salad is served in a surprisingly large portion. Suitable for both solo diners and large groups."</p>
           <div class="review-author">
             <div class="review-avatar">M</div>
             <div>
@@ -686,20 +715,16 @@
             </div>
           </div>
         </div>
-
       </div>
-
       <div class="reviews-badge reveal">
-        <div class="reviews-badge-inner">
-          ⭐ Vlerësim mesatar <span>5.0 / 5.0</span> në Google Maps
-        </div>
+        <div class="reviews-badge-inner">⭐ Vlerësim mesatar <span>5.0 / 5.0</span> në Google Maps</div>
       </div>
     </section>
 
     <!-- HOURS -->
     <section class="hours-section" id="hours">
       <h2 class="section-title reveal">Oraret e Hapjes</h2>
-      <p class="section-subtitle reveal">Jemi të hapur çdo ditë të javës për t'ju shërbyer</p>
+      <p class="section-subtitle reveal">Jemi të hapur çdo ditë të javës për t'ju shërbyer / Open every day</p>
       <div class="hours-grid">
         <div class="hours-row reveal"><span class="hours-day">E Hënë</span><span class="hours-time">06:00 – 22:00</span></div>
         <div class="hours-row reveal reveal-delay-1"><span class="hours-day">E Martë</span><span class="hours-time">06:00 – 22:00</span></div>
@@ -745,17 +770,20 @@
   </footer>
 
   <script>
+    // SCROLL REVEAL
     const revealEls = document.querySelectorAll('.reveal');
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
     revealEls.forEach(el => revealObs.observe(el));
 
+    // NAV TOGGLE CLOSE ON LINK CLICK
     const navToggle = document.getElementById('nav-toggle');
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => { navToggle.checked = false; });
     });
 
+    // ACTIVE NAV LINK
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     const activeObs = new IntersectionObserver((entries) => {
@@ -766,9 +794,10 @@
           if (match) match.classList.add('active');
         }
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.35 });
     sections.forEach(s => activeObs.observe(s));
 
+    // TODAY HIGHLIGHT IN HOURS
     const dayNames = ['E Diel','E Hënë','E Martë','E Mërkurë','E Enjte','E Premte','E Shtunë'];
     const todayName = dayNames[new Date().getDay()];
     const hour = new Date().getHours();
@@ -789,6 +818,7 @@
       }
     });
 
+    // COUNTER ANIMATION
     const counters = document.querySelectorAll('.stat-number[data-target]');
     const counterObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -808,6 +838,7 @@
     }, { threshold: 0.5 });
     counters.forEach(c => counterObs.observe(c));
 
+    // HERO PARTICLES
     const container = document.getElementById('heroParticles');
     if (container) {
       for (let i = 0; i < 22; i++) {
@@ -818,25 +849,21 @@
       }
     }
 
-    // MENU FILTER / SWITCHER
+    // MENU FILTERS
     const filterBtns = document.querySelectorAll('.menu-filter-btn');
     const menuCategories = document.querySelectorAll('.menu-category[data-category]');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active button
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         const filter = btn.getAttribute('data-filter');
-
         menuCategories.forEach(cat => {
           const catId = cat.getAttribute('data-category');
           if (filter === 'all' || catId === filter) {
             cat.classList.remove('hidden');
-            // Trigger fade-in animation
             cat.classList.remove('fade-in');
-            void cat.offsetWidth; // reflow to restart animation
+            void cat.offsetWidth;
             cat.classList.add('fade-in');
           } else {
             cat.classList.add('hidden');
