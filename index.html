@@ -854,6 +854,13 @@
     // MENU FILTERS
     const filterBtns = document.querySelectorAll('.menu-filter-btn');
     const menuCategories = document.querySelectorAll('.menu-category[data-category]');
+    menuCategories.forEach(cat => {
+  const catId = cat.getAttribute('data-category');
+
+  if (catId !== 'ushqim') {
+    cat.classList.add('hidden');
+  }
+});
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
