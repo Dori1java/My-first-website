@@ -493,13 +493,12 @@
 
       <!-- FILTERS -->
       <div class="menu-filters reveal">
-        <button class="menu-filter-btn active" data-filter="all">🍽️ Gjithçka / All</button>
-        <button class="menu-filter-btn" data-filter="ushqim">🥩 Ushqim / Food</button>
+        <button class="menu-filter-btn active" data-filter="ushqim">🥩 Ushqim / Food</button>
         <button class="menu-filter-btn" data-filter="kafe">☕ Kafe / Coffee</button>
         <button class="menu-filter-btn" data-filter="birra">🍺 Birra / Beer</button>
         <button class="menu-filter-btn" data-filter="pije">🥤 Pije / Drinks</button>
         <button class="menu-filter-btn" data-filter="alkool">🥃 Alkoolike / Spirits</button>
-      </div>
+       </div>
 
       <div class="menu-wrapper">
 
@@ -863,7 +862,7 @@
         const filter = btn.getAttribute('data-filter');
         menuCategories.forEach(cat => {
           const catId = cat.getAttribute('data-category');
-          if (filter === 'all' || catId === filter) {
+          if (catId === filter) {
             cat.classList.remove('hidden');
             cat.classList.remove('fade-in');
             void cat.offsetWidth;
