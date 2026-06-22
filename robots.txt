@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dori1java.github.io/My-first-website/sitemap.xml
