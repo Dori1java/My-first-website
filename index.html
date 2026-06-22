@@ -234,16 +234,16 @@
       position: relative;
       border: 1px solid rgba(212,175,55,0.2);
       box-shadow: 0 24px 70px rgba(0,0,0,0.45);
-      height: 280px;
+      height: 500px;
     }
     .menu-banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 55%;
-      transition: transform 0.7s ease;
-      display: block;
-    }
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     object-position: center center;
+     transition: transform 0.7s ease;
+     display: block;
+   }
     .menu-banner:hover img { transform: scale(1.03); }
     .menu-banner-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.65) 0%, transparent 55%, rgba(0,0,0,0.3) 100%); display: flex; align-items: center; padding: 0 2.5rem; }
     .menu-banner-text { max-width: 340px; }
@@ -347,9 +347,9 @@
  
     /* RESPONSIVE */
     @media (max-width: 980px) {
-      .menu-wrapper { grid-template-columns: 1fr; }
-      .menu-banner { height: 220px; }
-      .reviews-grid { grid-template-columns: 1fr; }
+     .menu-wrapper { grid-template-columns: 1fr; }
+     .menu-banner { height: 380px; }
+     .reviews-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 900px) {
       nav { padding: 1rem 4%; }
@@ -375,7 +375,7 @@
       .hero-actions, .contact-actions { flex-direction: column; }
       .btn { width: 100%; }
       .contact-box { padding: 1.8rem; }
-      .menu-banner { height: 180px; }
+      .menu-banner { height: 280px; }
       .menu-banner-overlay { padding: 0 1.5rem; }
       .menu-banner-text h3 { font-size: 1.3rem; }
     }
@@ -409,8 +409,8 @@
       footer { font-size: 0.85rem; padding: 1rem; }
       .whatsapp-float { bottom: 1.2rem; right: 1.2rem; width: 50px; height: 50px; }
       .whatsapp-float svg { width: 26px; height: 26px; }
-      .menu-banner { height: 150px; }
-      .menu-banner img { object-position: center 50%; }
+      .menu-banner { height: 240px; }
+      .menu-banner img { object-position: center center; }
       .menu-banner-text p { display: none; }
       .reviews-avg { font-size: 2.8rem; }
     }
