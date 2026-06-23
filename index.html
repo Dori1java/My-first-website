@@ -30,7 +30,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="shortcut icon" href="favicon.ico">
 
-  <link rel="preload" as="image" href="front.webp">
+  <link rel="preload" as="image" href="front.webp" type="image/webp" fetchpriority="high">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -444,6 +444,14 @@
         <a href="#contact">Kontakt</a>
       </div>
     </nav>
+    <img 
+  src="front.webp" 
+  alt="" 
+  aria-hidden="true"
+  fetchpriority="high"
+  decoding="async"
+  style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:0;pointer-events:none;"
+>
     <div class="hero">
       <div class="hero-particles" id="heroParticles"></div>
       <div class="hero-content">
